@@ -20,15 +20,12 @@
 		for(var i = 1; i <= 4; i++) {
 			// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen.
 			if (Letter[i] == document.getElementById("input_letter_1"+i).value) {
-				alert("hi");
 				document.getElementById("input_letter_1"+i).style.backgroundColor = "red"; 
-			} else { 
-				console.log("fout");
-				// Maar als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
-				if (Letter[i].indexOf(chosen_word) > -1) {
-					document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
-				}
+			// Maar als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+			if (Letter[i].indexOf(chosen_word) > -1) {
+				document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
 			}
 		}
+	}
 	
 	}
