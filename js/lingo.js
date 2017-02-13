@@ -10,6 +10,9 @@
 	var Randomletter = document.getElementById("random_letter_1");
 	var Letter = chosen_word.split("");
 
+	var test = Letter.indexOf(chosen_word);
+	console.log(test);
+
 	Randomletter.value = Letter[0];
 
 	// Check of het ingevulde woord overeenkomt met het antwoord of niet. 
