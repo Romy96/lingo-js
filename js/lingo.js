@@ -19,13 +19,13 @@
 		// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
 		for(var i = 1; i <= 4; i++) {
 			var Remaining_letters = document.getElementById("input_letter_1"+i).innerHTML;
+			// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+			if (Letters[i].indexOf(Remaining_letters) > -1) {
+				document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
+			}
 			// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen.
 			if (Letters[i] == document.getElementById("input_letter_1"+i).value) {
 				document.getElementById("input_letter_1"+i).style.backgroundColor = "red"; 
-			}
-			// Maar als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
-			if (Letters[i] !== document.getElementById("input_letter_1"+i).value) {
-				document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
 			}
 		}
 	}
