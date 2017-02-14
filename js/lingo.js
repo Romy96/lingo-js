@@ -8,12 +8,9 @@
 
 	// Split het gekozen woord in letters en laat het zien op het gekozen element
 	var Randomletter = document.getElementById("random_letter_1");
-	var Letter = chosen_word.split("");
+	var Letters = chosen_word.split("");
 
-	var test = Letter.indexOf(chosen_word);
-	console.log(test);
-
-	Randomletter.value = Letter[0];
+	Randomletter.value = Letters[0];
 
 	// Check of het ingevulde woord overeenkomt met het antwoord of niet. 
 	function Check() {
@@ -21,14 +18,15 @@
 		document.getElementById("random_letter_1").style.backgroundColor = "red";
 		// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
 		for(var i = 1; i <= 4; i++) {
+			var Remaining_letters = document.getElementById("input_letter_1"+i).innerHTML;
 			// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen.
-			if (Letter[i] == document.getElementById("input_letter_1"+i).value) {
+			if (Letters[i] == document.getElementById("input_letter_1"+i).value) {
 				document.getElementById("input_letter_1"+i).style.backgroundColor = "red"; 
+			}
 			// Maar als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
-			if (Letter[i].indexOf(chosen_word) > -1) {
+			if (Letters[i] !== document.getElementById("input_letter_1"+i).value) {
 				document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
 			}
 		}
 	}
 	
-	}
