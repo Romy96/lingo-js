@@ -23,9 +23,19 @@
 			if (Letters.indexOf(correct_letter) > -1) {
 				document.getElementById("input_letter_1"+i).style.backgroundColor = "yellow";
 			}
-			// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen.
+			// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
 			if (Letters[i] == document.getElementById("input_letter_1"+i).value) {
-				document.getElementById("input_letter_1"+i).style.backgroundColor = "red"; 
+				document.getElementById("input_letter_1"+i).style.backgroundColor = "red";
+				var guessed_letters = document.getElementById("input_letter_2"+i);
+				guessed_letters.value = document.getElementById("input_letter_1"+i).value;
+				document.getElementById("input_letter_2"+i).style.backgroundColor = "red";
+			}
+			// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+			if (Letters[i] != document.getElementById("input_letter_1"+i).value) {
+				var Randomletter_2 = document.getElementById("random_letter_2");
+				Randomletter_2.value = Letters[0];
+				document.getElementById("random_letter_2").style.backgroundColor = "red";
+				var correct_letter_2 = document.getElementById("input_letter_2"+i).value;
 			}
 		}
 	}
