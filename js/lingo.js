@@ -6,15 +6,14 @@
 	var chosen_word = words[number];
 	console.log(chosen_word);
 
-	var count = document.getElementById("amount_tries");
-	count.value = 1;
-	console.log(count);
-
 	// Split het gekozen woord in letters en laat het zien op het gekozen element
 	var Randomletter = document.getElementById("random_letter_1");
 	var Letters = chosen_word.split("");
 
 	Randomletter.value = Letters[0];
+
+	var count = 1;
+	console.log(count);
 
 	// Check of het ingevulde woord overeenkomt met het antwoord of niet. 
 	function Check() {
@@ -37,14 +36,15 @@
 				}
 				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
 				if (Letters[i] != document.getElementById("input_letter_1"+i).value) {
-					count++;
 					var Randomletter_2 = document.getElementById("random_letter_2");
 					Randomletter_2.value = Letters[0];
 					document.getElementById("random_letter_2").style.backgroundColor = "red";
-					var correct_letter_2 = document.getElementById("input_letter_2"+i).value;
 				}
 			}
 		}
+
+		count++;
+		console.log("Poging: " + count);
 	}
 
 
