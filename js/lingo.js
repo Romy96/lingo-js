@@ -130,7 +130,7 @@
 				if (Letters[i] == document.getElementById("input_letter_5"+i).value) {
 					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
 				}
-				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+				// Als je het woord niet geraden hebt en je bent bij de laatste rij, dan is het automatisch een gameover.
 				if (Letters[i] != document.getElementById("input_letter_5"+i).value) {
 					alert("Game over! Je hebt verloren!");
 				}
