@@ -12,15 +12,15 @@
 
 	Randomletter.value = Letters[0];
 
-	var count = 1;
-	console.log(count);
+	var count = 5;
+	document.getElementById("amount_tries").value = count;
 
 	// Check of het ingevulde woord overeenkomt met het antwoord of niet. 
 	function Check() {
 		// Het eerste letter van het woord staat altijd op de juiste plek en is automatisch goed.
 		document.getElementById("random_letter_1").style.backgroundColor = "red";
 		// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak 
-		if (count == 1) {
+		if (count == 5) {
 			for(var i = 1; i <= 4; i++) {
 				var correct_letter = document.getElementById("input_letter_1"+i).value;
 				// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
@@ -43,8 +43,102 @@
 			}
 		}
 
-		count++;
-		console.log("Poging: " + count);
+		if (count == 4) {
+			// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
+			for(var i = 1; i <= 4; i++) {
+				var correct_letter_2 = document.getElementById("input_letter_2"+i).value;
+				// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+				if (Letters.indexOf(correct_letter_2) > -1) {
+					document.getElementById("input_letter_2"+i).style.backgroundColor = "yellow";
+				}
+				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
+				if (Letters[i] == document.getElementById("input_letter_2"+i).value) {
+					document.getElementById("input_letter_2"+i).style.backgroundColor = "red";
+					var guessed_letters_2 = document.getElementById("input_letter_3"+i);
+					guessed_letters_2.value = document.getElementById("input_letter_2"+i).value;
+					document.getElementById("input_letter_3"+i).style.backgroundColor = "red";
+				}
+				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+				if (Letters[i] != document.getElementById("input_letter_2"+i).value) {
+					var Randomletter_3 = document.getElementById("random_letter_3");
+					Randomletter_3.value = Letters[0];
+					document.getElementById("random_letter_3").style.backgroundColor = "red";
+					var correct_letter_3 = document.getElementById("input_letter_3"+i).value;
+				}
+			}
+		}
+
+		if (count == 3) {
+			// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
+			for(var i = 1; i <= 4; i++) {
+				var correct_letter_3 = document.getElementById("input_letter_3"+i).value;
+				// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+				if (Letters.indexOf(correct_letter_3) > -1) {
+					document.getElementById("input_letter_3"+i).style.backgroundColor = "yellow";
+				}
+				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
+				if (Letters[i] == document.getElementById("input_letter_3"+i).value) {
+					document.getElementById("input_letter_3"+i).style.backgroundColor = "red";
+					var guessed_letters_3 = document.getElementById("input_letter_4"+i);
+					guessed_letters_3.value = document.getElementById("input_letter_3"+i).value;
+					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
+				}
+				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+				if (Letters[i] != document.getElementById("input_letter_2"+i).value) {
+					var Randomletter_4 = document.getElementById("random_letter_4");
+					Randomletter_4.value = Letters[0];
+					document.getElementById("random_letter_4").style.backgroundColor = "red";
+					var correct_letter_4 = document.getElementById("input_letter_4"+i).value;
+				}
+			}
+		}
+
+		if (count == 2) {
+			// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
+			for(var i = 1; i <= 4; i++) {
+				var correct_letter_4 = document.getElementById("input_letter_4"+i).value;
+				// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+				if (Letters.indexOf(correct_letter_4) > -1) {
+					document.getElementById("input_letter_4"+i).style.backgroundColor = "yellow";
+				}
+				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
+				if (Letters[i] == document.getElementById("input_letter_4"+i).value) {
+					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
+					var guessed_letters_4 = document.getElementById("input_letter_5"+i);
+					guessed_letters_4.value = document.getElementById("input_letter_4"+i).value;
+					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
+				}
+				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+				if (Letters[i] != document.getElementById("input_letter_4"+i).value) {
+					var Randomletter_5 = document.getElementById("random_letter_5");
+					Randomletter_5.value = Letters[0];
+					document.getElementById("random_letter_5").style.backgroundColor = "red";
+					var correct_letter_5 = document.getElementById("input_letter_5"+i).value;
+				}
+			}
+		}
+
+		if (count == 1) {
+			// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak
+			for(var i = 1; i <= 4; i++) {
+				var correct_letter_5 = document.getElementById("input_letter_5"+i).value;
+				// Als het letter die wel voorkomt niet op de goede plek staat, dan wordt het vak geel.
+				if (Letters.indexOf(correct_letter_5) > -1) {
+					document.getElementById("input_letter_5"+i).style.backgroundColor = "yellow";
+				}
+				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
+				if (Letters[i] == document.getElementById("input_letter_5"+i).value) {
+					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
+				}
+				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
+				if (Letters[i] != document.getElementById("input_letter_5"+i).value) {
+					alert("Game over! Je hebt verloren!");
+				}
+			}
+		}
+
+		count--;
+		document.getElementById("amount_tries").value = count;
 	}
 
 

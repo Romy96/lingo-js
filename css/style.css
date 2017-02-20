@@ -62,8 +62,9 @@ span {
 .tries {
 	height: 20px;
 	width: 30px;
-	font-size: 24px;
+	font-size: 20px;
 	background-color: #005c99;
 	border: 1px solid #005c99;
 	color: white;
+	padding-left: 3px;
 }
