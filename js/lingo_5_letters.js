@@ -1,9 +1,9 @@
 	// Pak de variable Words van words-nl.js als nummer en zorg ervoor dat je een willekeurig nummer van de woord krijgt in de console.
-	var number = Math.floor(Math.random()*words.length - 1);
+	var number = Math.floor(Math.random()*words_5.length - 1);
 	console.log(number);
 
 	// Pak nu het woord zonder de nummer door de net gemaakte variable te pakken en laat het zien in de console
-	var chosen_word = words[number];
+	var chosen_word = words_5[number];
 	console.log(chosen_word);
 
 	// Split het gekozen woord in letters en laat het zien op het gekozen element
@@ -129,10 +129,11 @@
 				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
 				if (Letters[i] == document.getElementById("input_letter_5"+i).value) {
 					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
+					var guessed_letters_5 = document.getElementById("input_letter_5"+i);
 				}
 				// Als je het woord niet geraden hebt en je bent bij de laatste rij, dan is het automatisch een gameover.
 				if (Letters[i] != document.getElementById("input_letter_5"+i).value) {
-					alert("Game over! Je hebt verloren!");
+					alert('Game over! Je hebt verloren!');
 				}
 			}
 		}
