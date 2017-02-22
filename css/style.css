@@ -68,3 +68,29 @@ span {
 	color: white;
 	padding-left: 3px;
 }
+
+form 
+{
+	border: 2px solid blue;
+	background-color: #00ace6;
+	width: 100px;
+	height: 150px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	margin: 0 auto;
+}
+
+.radiolabel
+{
+    display: inline-block; /* added this */
+    padding-left: 50px;
+    padding-bottom: 15px;
+    font-size: 26px;
+}
+
+.welcome 
+{
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
