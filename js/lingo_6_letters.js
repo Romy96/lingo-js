@@ -106,7 +106,7 @@
 					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
 					var guessed_letters_4 = document.getElementById("input_letter_5"+i);
 					guessed_letters_4.value = document.getElementById("input_letter_4"+i).value;
-					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
+					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
 				}
 				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
 				if (Letters[i] != document.getElementById("input_letter_4"+i).value) {
@@ -129,11 +129,11 @@
 				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
 				if (Letters[i] == document.getElementById("input_letter_5"+i).value) {
 					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
-					var guessed_letters_5 = document.getElementById("input_letter_5"+i);
 				}
 				// Als je het woord niet geraden hebt en je bent bij de laatste rij, dan is het automatisch een gameover.
 				if (Letters[i] != document.getElementById("input_letter_5"+i).value) {
 					alert('Game over! Je hebt verloren!');
+					alert(chosen_word);
 				}
 			}
 		}
