@@ -20,6 +20,7 @@
 		// Het eerste letter van het woord staat altijd op de juiste plek en is automatisch goed.
 		document.getElementById("random_letter_1").style.backgroundColor = "red";
 		// Hier geven we de i een waarde van het tweede veld van de rij en tellen we dit op tot de laatste vak 
+		var amount_guessed_letters = 1;
 		if (count == 5) {
 			for(var i = 1; i <= 5; i++) {
 				var correct_letter = document.getElementById("input_letter_1"+i).value;
@@ -59,6 +60,7 @@
 					var guessed_letters_2 = document.getElementById("input_letter_3"+i);
 					guessed_letters_2.value = document.getElementById("input_letter_2"+i).value;
 					document.getElementById("input_letter_3"+i).style.backgroundColor = "red";
+					amount_guessed_letters++;
 				}
 				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
 				if (Letters[i] != document.getElementById("input_letter_2"+i).value) {
@@ -84,6 +86,7 @@
 					var guessed_letters_3 = document.getElementById("input_letter_4"+i);
 					guessed_letters_3.value = document.getElementById("input_letter_3"+i).value;
 					document.getElementById("input_letter_4"+i).style.backgroundColor = "red";
+					amount_guessed_letters++;
 				}
 				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
 				if (Letters[i] != document.getElementById("input_letter_2"+i).value) {
@@ -109,6 +112,7 @@
 					var guessed_letters_4 = document.getElementById("input_letter_5"+i);
 					guessed_letters_4.value = document.getElementById("input_letter_4"+i).value;
 					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
+					amount_guessed_letters++;
 				}
 				// Als je het woord niet geraden hebt, dan ga je naar de volgende rij met het eerste letter en de juiste letters meegegeven.
 				if (Letters[i] != document.getElementById("input_letter_4"+i).value) {
@@ -131,6 +135,7 @@
 				// Als de letter voorkomt in het woord en staat op het juiste plek, dan word het vak rood. Als ze allemaal rood zijn, dan heb jij gewonnen. 
 				if (Letters[i] == document.getElementById("input_letter_5"+i).value) {
 					document.getElementById("input_letter_5"+i).style.backgroundColor = "red";
+					amount_guessed_letters++;
 				}
 				// Als je het woord niet geraden hebt en je bent bij de laatste rij, dan is het automatisch een gameover.
 				if (Letters[i] != document.getElementById("input_letter_5"+i).value) {
